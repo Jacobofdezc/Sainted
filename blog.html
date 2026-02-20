@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/IsotipoSainted.png" type="image/x-icon">
+  <title>Sainted</title>
+<link rel="stylesheet" href="css/blog.css"></head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html">
+      <img id="logo" src="img/Logosaintednegropequeño.png" alt="Logo del restaurante">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="Ropa.html">Ropa</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<svg viewBox="0 0 800 800" width="100%">
+
+  <!-- imagen base -->
+  <image href="img/IsotipoSainted.png" width="800" height="800"/>
+
+  <!-- SECTOR ARRIBA -->
+  <a href="/Vidas de Santos">
+    <polygon class="sector"
+    
+      points=" 400,50 500,150 400,360 300,150"/>
+    <text x="400" y="160" class="label">LIBROS / MÚSICA</text>
+  </a>
+
+  <!-- SECTOR DERECHA -->
+  <a href="vidasdesantos.html">
+    <polygon class="sector"
+      points="750,400 650,500 400,380 650,300"/>
+    <text x="620" y="400" class="label">VIDAS DE SANTOS</text>
+  </a>
+
+  <!-- SECTOR ABAJO -->
+  <a href="/historia">
+    <polygon class="sector"
+      points="400,780 500,640 400,400 300,640"/>
+    <text x="400" y="600" class="label">REFLEXIONES</text>
+  </a>
+
+  <!-- SECTOR IZQUIERDA -->
+  <a href="recomendaciones.html">
+    <polygon class="sector"
+      points="30,400 160,500 380,380 160,300"/>
+    <text x="185" y="400" class="label">RECOMENDACIONES</text>
+  </a>
+
+</svg>
+
+</div>
+
+ <!-- FOOTER -->
+ <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Columna 1: Logo + descripción -->
+            <div class="footer-about">
+                <img src="img/Logosaintednegro.png" alt="Sainted Logo" class="footer-logo">
+                <!--  <p>Streetwear cristiano emergente. Fe y estilo urbano en cada prenda.</p>-->
+            </div>
+
+            <!-- Columna 2: Redes Sociales -->
+            <div class="footer-social">
+                <h4>REDES SOCIALES</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="img/mail.svg" alt="YouTube"></a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Soporte -->
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Ropa.html">Ropa</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Enlaces -->
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 5: Newsletter -->
+            <div class="footer-newsletter">
+                <h4>ÚNETE A NUESTRO BLOG</h4>
+                <form class="newsletter-form" action="#" method="post">
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <button type="submit">UNIRSE</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Sainted. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+  <!-- SCRIPT: menú desplegable -->
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace (UX móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
+
+</body>
+</html>

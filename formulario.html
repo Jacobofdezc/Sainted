@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="css/formulario.css">
+
+  <!-- Íconos (usamos Font Awesome) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img id="logo" src="img/Logosaintednegropequeño.png" alt="Logo del restaurante">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="Ropa.html">Ropa</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>CONTACTO</h1>
+    <p class="subtitle">¿Interesado en nuestras prendas? Completa el formulario y nos pondremos en contacto contigo</p>
+
+    <div class="content">
+      <!-- Formulario -->
+      <div class="formulario">
+        <form id="contact-form">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje"
+            placeholder="Cuéntanos qué prendas te interesan y cualquier detalle adicional..." required></textarea>
+
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+
+      <!-- Información de contacto -->
+      <div>
+        <div class="info-contacto">
+          <h3>INFORMACIÓN DE CONTACTO</h3>
+
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p><b>Email</b> info@sainted.com</p>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <p><b>Teléfono</b> +34 600 000 000</p>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p><b>Ubicación</b> España</p>
+          </div>
+        </div>
+
+        <div class="proceso">
+          <h3>PROCESO DE PEDIDO</h3>
+          <ol>
+            <li>Completa el formulario con tus datos y lo que te interesa</li>
+            <li>Nos pondremos en contacto contigo en 24-48 horas</li>
+            <li>Te enviaremos detalles sobre disponibilidad y precios</li>
+            <li>Coordinamos el pago y la entrega de tu pedido</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- FOOTER -->
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Columna 1: Logo + descripción -->
+    <div class="footer-about">
+      <img src="img/Logosaintednegro.png" alt="Sainted Logo" class="footer-logo">
+      <!--  <p>Streetwear cristiano emergente. Fe y estilo urbano en cada prenda.</p>-->
+    </div>
+
+    <!-- Columna 2: Redes Sociales -->
+    <div class="footer-social">
+      <h4>REDES SOCIALES</h4>
+      <div class="social-icons">
+        <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="img/mail.svg" alt="YouTube"></a>
+      </div>
+    </div>
+
+    <!-- Columna 3: Soporte -->
+    <div class="footer-links">
+      <h4>ENLACES</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Ropa.html">Ropa</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 4: Enlaces -->
+    <div class="footer-links">
+      <h4>ENLACES</h4>
+      <ul>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#terminos">Términos y condiciones</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 5: Newsletter 
+    <div class="footer-newsletter">
+      <h4>ÚNETE A NUESTRA BLOG</h4>
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <button type="submit">UNIRSE</button>
+      </form>
+    </div>
+-->
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Sainted. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Inicializa EmailJS con tu Public Key
+    emailjs.init("eTMqyguvLOh9eWdg5"); // <-- reemplaza con tu clave pública
+
+    // Captura el formulario
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // evita recargar la página
+
+      emailjs.sendForm("service_2uxhcmw", "template_uktquce", this)
+        .then(() => {
+          alert("✅ Tu mensaje fue enviado correctamente. ¡Gracias por contactarnos!");
+          this.reset(); // limpia el formulario
+        }, (error) => {
+          console.error("Error al enviar el formulario:", error);
+          alert("❌ Hubo un problema al enviar el mensaje. Intenta nuevamente.");
+        });
+    });
+  </script>
+  <!-- SCRIPT: menú desplegable -->
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace (UX móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
+</body>
+
+</html>

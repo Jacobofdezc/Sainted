@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/IsotipoSainted.png" type="image/x-icon">
+  <title>Sainted</title>
+<link rel="stylesheet" href="css/index.css"></head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html">
+      <img id="logo" src="img/Logosaintednegropequeño.png" alt="Logo ">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="blog.html">Blog</a>
+      <a href="Ropa.html">Ropa</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- VIDEO DE FONDO -->
+  <div class="video-container">
+    <video autoplay muted loop class="video-background">
+      <source src="img/videocrafted-sainted.mp4" type="video/mp4">
+    </video>
+<img id="centerLogo" src="img/Logosaintednegro.png" alt="Logo" class="center-image">
+  </div>
+
+  <!-- MISIÓN -->
+  <section class="mision">
+    <h1>¿Qué es Sainted?</h1>
+    <p>A Sainted Life, Una Vida Santa.</p>
+    <p>Sainted es una excusa para transmintir un mensaje a través de la ropa: </p>
+    <p>TODOS PODEMOS SER SANTOS</p>
+    <p>Este es nuestro lema, pues queremos recordar a nuestros amigos y desconocidos que nuestra meta como
+cristianos es ser santos, para poder así estar tan cerca de Dios que podamos gozar de la experiencia del cielo en la 
+Tierra. </p>
+<p>Aunque no sea una tarea fácil, es posible, pero no por méritos propios si no con la ayuda de Jesús.</p>
+<p> Él es la clave para poder acercarnos a nuestro padre celestial y para poder comprender sus enseñanzas mediante la eucaristía y su palabra en el evangelio.</p>
+  </section>
+
+  <!-- ÚNETE -->
+  <section class="unete">
+    <h2>¿LISTO PARA UNA VIDA SANTA?</h2>
+    <p>Descubre historias de santos y reflexiones sobre la palabra de Dios que te pueden servir de motivación para emprender este camino hacia la santidad.</p>
+    <div class="botones">
+      <a href="blog.html">LEER BLOG</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+ <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Columna 1: Logo + descripción -->
+            <div class="footer-about">
+                <img src="img/Logosaintednegro.png" alt="Sainted Logo" class="footer-logo">
+                <!--  <p>Streetwear cristiano emergente. Fe y estilo urbano en cada prenda.</p>-->
+            </div>
+
+            <!-- Columna 2: Redes Sociales -->
+            <div class="footer-social">
+                <h4>REDES SOCIALES</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="img/mail.svg" alt="YouTube"></a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Soporte -->
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Ropa.html">Ropa</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Enlaces -->
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 5: Newsletter -->
+            <div class="footer-newsletter">
+                <h4>ÚNETE A NUESTRO BLOG</h4>
+                <form class="newsletter-form" action="#" method="post">
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <button type="submit">UNIRSE</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Sainted. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+  <!-- SCRIPT: menú desplegable -->
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace (UX móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
+  <script>
+  // Lista de imágenes/logo disponibles
+  const logos = [
+    "img/imagenlogo22.png",
+    "img/imagenlogonegro33.png",
+    "img/imagenlogo44.png",
+    "img/imagenlogonegro11.png"
+  ];
+
+  const randomIndex = Math.floor(Math.random() * logos.length);
+  const logoElement = document.getElementById("centerLogo");
+
+  logoElement.src = logos[randomIndex];
+</script>
+
+
+</body>
+</html>

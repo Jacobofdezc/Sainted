@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f7;
+    color: #222;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #666;
+    margin-top: 10px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    position: relative;
+}
+
+/* TARJETAS */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.card button {
+    padding: 8px 18px;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background: #555;
+}
+
+/* EFECTO HOVER ELEGANTE */
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* TAMAÑOS VARIADOS */
+
+.grande {
+    grid-column: span 2;
+}
+
+.mediana {
+    grid-column: span 1;
+}
+
+.pequeña {
+    grid-column: span 1;
+}
+
+/* ROTACIONES SUAVES PARA EFECTO DESORDEN */
+
+.rotacion1 { transform: rotate(-2deg); }
+.rotacion2 { transform: rotate(1.5deg); }
+.rotacion3 { transform: rotate(-1deg); }
+.rotacion4 { transform: rotate(2deg); }
+.rotacion5 { transform: rotate(-1.5deg); }
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    margin-top: 80px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .grande {
+        grid-column: span 1;
+    }
+}

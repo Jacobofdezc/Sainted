@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editorial Advanced</title>
+<link rel="stylesheet" href="css/345pro.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+      <img id="logo" src="img/logosanBLUERED (1) (1).png" alt="Logo del restaurante">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="Ropa.html">Ropa</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+<div class="hero">
+    <h1>Vidas de Santos</h1>
+    <p>Conoce las distintas historias de grandes santos</p>
+</div>
+
+<main class="grid">
+
+    <a href="articulo.html" class="card grande" style="background-image: url('img/san_jose_obrero.jpg');">
+        <div class="overlay"></div>
+        <div class="content">
+            <span class="tag">Destacado</span>
+            <h2>San José</h2>
+            <p>Modelo de fe, humildad y valentía</p>
+            <button>Leer artículo →</button>
+        </div>
+    </a>
+
+    <a href="articulo.html" class="card mediana" style="background-image: url('https://picsum.photos/800/800?2');">
+        <div class="overlay"></div>
+        <div class="content">
+            <span class="tag">UX</span>
+            <h2>Microinteracciones Inteligentes</h2>
+            <button>Leer artículo →</button>
+        </div>
+    </a>
+
+    <a href="articulo.html" class="card pequeña" style="background-image: url('https://picsum.photos/600/800?3');">
+        <div class="overlay"></div>
+        <div class="content">
+            <span class="tag">Creatividad</span>
+            <h2>Diseño Editorial Moderno</h2>
+            <button>Leer artículo →</button>
+        </div>
+    </a>
+
+    <a href="articulo.html" class="card horizontal" style="background-image: url('https://picsum.photos/1200/700?4');">
+        <div class="overlay"></div>
+        <div class="content">
+            <span class="tag">Análisis</span>
+            <h2>Tipografía en la Era Digital</h2>
+            <p>El impacto visual en la narrativa.</p>
+            <button>Leer artículo →</button>
+        </div>
+    </a>
+
+</main>
+
+ <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Columna 1: Logo + descripción -->
+            <div class="footer-about">
+                <img src="img/Logosaintednegro.png" alt="Sainted Logo" class="footer-logo">
+                <!--  <p>Streetwear cristiano emergente. Fe y estilo urbano en cada prenda.</p>-->
+            </div>
+
+            <!-- Columna 2: Redes Sociales -->
+            <div class="footer-social">
+                <h4>REDES SOCIALES</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="img/mail.svg" alt="YouTube"></a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Soporte -->
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Ropa.html">Ropa</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Enlaces -->
+            <div class="footer-links">
+                <h4>ENLACES</h4>
+                <ul>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#.html">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 5: Newsletter -->
+            <div class="footer-newsletter">
+                <h4>ÚNETE A NUESTRO BLOG</h4>
+                <form class="newsletter-form" action="#" method="post">
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <button type="submit">UNIRSE</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Sainted. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace (UX móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
+</body>
+</html>

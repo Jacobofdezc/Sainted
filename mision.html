@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misión País | Experiencias</title>
+<link rel="stylesheet" href="css/recomendaciones.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+      <img id="logo" src="img/logosanBLUERED (1) (1).png" alt="Logo del restaurante">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="Ropa.html">Ropa</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+<div class="hero-interno">
+    <h1>Misión País</h1>
+    <p>Evangelizar, servir y transformar comunidades</p>
+</div>
+
+<main class="contenido">
+
+    <!-- RESUMEN -->
+    <section class="resumen">
+        <h2>¿Qué es Misión País?</h2>
+        <p>
+            Misión País es una experiencia de voluntariado donde jóvenes comparten su fe 
+            en comunidades que lo necesitan. Son días de servicio, oración y encuentro.
+        </p>
+        <p>
+            Es una oportunidad para salir de la zona de confort, descubrir nuevas realidades 
+            y crecer tanto humana como espiritualmente.
+        </p>
+    </section>
+
+    <!-- COMENTARIOS EN TARJETAS -->
+  
+ <section class="comentarios-cuadrados">
+        <h2>Experiencias compartidas</h2>
+
+        <div class="grid-comentarios">
+
+            <!-- Comentario ejemplo 1 -->
+            <div class="card-comentario">
+                <h3>Ana Martínez</h3>
+                <p>
+                    Ha sido una de las experiencias más fuertes de mi vida.
+                    Me ayudó a redescubrir mi fe y valorar mucho más lo sencillo.
+                </p>
+                <span>Enero 2026</span>
+            </div>
+
+            <!-- Comentario ejemplo 2 -->
+            <div class="card-comentario">
+                <h3>Javier López</h3>
+                <p>
+                    Servir a los demás cambia completamente tu perspectiva.
+                    Volvería sin dudarlo.
+                </p>
+                <span>Febrero 2026</span>
+            </div>
+
+            <!-- Comentario ejemplo 3 -->
+            <div class="card-comentario">
+                <h3>Lucía Fernández</h3>
+                <p>
+                    Me impresionó la acogida de las familias.
+                    Aprendí más en una semana que en meses.
+                </p>
+                <span>Marzo 2026</span>
+            </div>
+
+            <!-- Cuadrado para crear comentario -->
+            <div class="card-crear">
+                <h3>Comparte tu experiencia</h3>
+                <input type="text" placeholder="Tu nombre">
+                <textarea placeholder="Escribe tu experiencia..."></textarea>
+                <button>Publicar comentario</button>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 - Experiencias que Transforman
+</footer>
+
+
+
+<script>
+const grid = document.querySelector(".grid-comentarios");
+const boton = document.querySelector(".card-crear button");
+const nombreInput = document.querySelector(".card-crear input");
+const textoInput = document.querySelector(".card-crear textarea");
+
+boton.addEventListener("click", () => {
+    const nombre = nombreInput.value.trim();
+    const texto = textoInput.value.trim();
+
+    if (!nombre || !texto) {
+        alert("Completa los campos");
+        return;
+    }
+
+    // 1️⃣ Crear el cuadrado
+    const card = document.createElement("div");
+    card.classList.add("card-comentario");
+
+    // 2️⃣ Meter el contenido
+    card.innerHTML = `
+        <h3>${nombre}</h3>
+        <p>${texto}</p>
+        <span>${new Date().toLocaleDateString("es-ES", {
+            month: "long",
+            year: "numeric"
+        })}</span>
+    `;
+
+    // 3️⃣ Insertarlo en la web
+    grid.insertBefore(card, document.querySelector(".card-crear"));
+
+    // 4️⃣ Limpiar inputs
+    nombreInput.value = "";
+    textoInput.value = "";
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+<script>
+const grid = document.querySelector(".grid-comentarios");
+const boton = document.querySelector(".card-crear button");
+const nombreInput = document.querySelector(".card-crear input");
+const textoInput = document.querySelector(".card-crear textarea");
+
+async function cargarComentarios() {
+  const res = await fetch("/api/comentarios");
+  const comentarios = await res.json();
+
+  comentarios.forEach(c => {
+    const card = document.createElement("div");
+    card.className = "card-comentario";
+    card.innerHTML = `
+      <h3>${c.nombre}</h3>
+      <p>${c.mensaje}</p>
+      <span>${new Date(c.created_at).toLocaleDateString("es-ES", {
+        month: "long",
+        year: "numeric"
+      })}</span>
+    `;
+    grid.insertBefore(card, document.querySelector(".card-crear"));
+  });
+}
+
+boton.addEventListener("click", async () => {
+  const nombre = nombreInput.value.trim();
+  const mensaje = textoInput.value.trim();
+
+  if (!nombre || !mensaje) return alert("Completa los campos");
+
+  await fetch("/api/comentarios", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nombre, mensaje })
+  });
+
+  nombreInput.value = "";
+  textoInput.value = "";
+  location.reload(); // simple y efectivo
+});
+
+cargarComentarios();
+</script>

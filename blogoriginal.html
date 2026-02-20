@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog estilo tarjetas</title>
+  <link rel="stylesheet" href="css/blogoriginal.css">
+  <link rel="icon" href="img/IsotipoSainted.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html">
+      <img id="logo" src="img/Logosaintednegropequeño.png" alt="Logo del restaurante">
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="nav-links">
+      <a href="Ropa.html">Ropa</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="blog-container">
+    <div class="card">
+      <img src="img/descarga (3).jpg" alt="San Francisco de Asís">
+      <div class="card-content">
+        <p class="date">15 de Marzo, 2025</p>
+        <h3 class="title">SAN FRANCISCO DE ASÍS</h3>
+        <p class="subtitle">El Santo de la Naturaleza</p>
+        <p class="description">
+          Descubre la vida de Francisco, quien renunció a las riquezas para vivir en pobreza y predicar el amor de
+          Dios...
+        </p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/photo-1438232992991-995b7058bbb3.jpg" alt="Santa Teresa de Calcuta">
+      <div class="card-content">
+        <p class="date">10 de Marzo, 2025</p>
+        <h3 class="title">SANTA TERESA DE CALCUTA</h3>
+        <p class="subtitle">El Ángel de los Pobres</p>
+        <p class="description">
+          La inspiradora historia de la Madre Teresa, quien dedicó su vida a servir a los más necesitados en las calles
+          de India...
+        </p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/descarga (4).jpg" alt="San Agustín de Hipona">
+      <div class="card-content">
+        <p class="date">5 de Marzo, 2025</p>
+        <h3 class="title">SAN AGUSTÍN DE HIPONA</h3>
+        <p class="subtitle">El Filósofo de la Fe</p>
+        <p class="description">
+          Un viaje por la transformación de Agustín, desde una vida de placeres hasta convertirse en uno de los grandes
+          doctores...
+        </p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/descarga (3).jpg" alt="Santa Catalina de Siena">
+      <div class="card-content">
+        <p class="date">1 de Marzo, 2025</p>
+        <h3 class="title">SANTA CATALINA DE SIENA</h3>
+        <p class="subtitle">La Mística de la Iglesia</p>
+        <p class="description">
+          Catalina, una de las grandes doctoras de la Iglesia, inspiró a multitudes con su fe, sabiduría y escritos
+          espirituales...
+        </p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/descarga (3).jpg" alt="San Francisco de Asís">
+      <div class="card-content">
+        <p class="date">15 de Marzo, 2025</p>
+        <h3 class="title">SAN FRANCISCO DE ASÍS</h3>
+        <p class="subtitle">El Santo de la Naturaleza</p>
+        <p class="description">
+          Descubre la vida de Francisco, quien renunció a las riquezas para vivir en pobreza y predicar el amor de
+          Dios...
+        </p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </div>
+
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Columna 1: Logo + descripción -->
+      <div class="footer-about">
+        <img src="img/Logosaintednegro.png" alt="Sainted Logo" class="footer-logo">
+        <!--  <p>Streetwear cristiano emergente. Fe y estilo urbano en cada prenda.</p>-->
+      </div>
+
+      <!-- Columna 2: Redes Sociales -->
+      <div class="footer-social">
+        <h4>REDES SOCIALES</h4>
+        <div class="social-icons">
+          <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="img/mail.svg" alt="YouTube"></a>
+        </div>
+      </div>
+
+      <!-- Columna 3: Soporte -->
+      <div class="footer-links">
+        <h4>ENLACES</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Ropa.html">Ropa</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Enlaces -->
+      <div class="footer-links">
+        <h4>ENLACES</h4>
+        <ul>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="#terminos">Términos y condiciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 5: Newsletter -->
+      <div class="footer-newsletter">
+        <h4>ÚNETE A NUESTRO BLOG</h4>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+          <button type="submit">UNIRSE</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>© 2025 Sainted. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: menú desplegable -->
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Cierra el menú al hacer clic en un enlace (UX móvil)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('active'));
+    });
+  </script>
+</body>
+
+</html>

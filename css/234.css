@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: linear-gradient(135deg, #f4f4f6, #e9e9ee);
+    color: #1a1a1a;
+    padding: 40px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+}
+
+.hero p {
+    color: #555;
+    margin-top: 10px;
+}
+
+/* MASONRY LAYOUT */
+
+.masonry {
+    column-count: 3;
+    column-gap: 30px;
+}
+
+.post {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Sticker decorativo */
+
+.post::after {
+    content: "";
+    width: 60px;
+    height: 8px;
+    background: #111;
+    position: absolute;
+    top: -4px;
+    left: 30px;
+    border-radius: 20px;
+    opacity: 0.15;
+}
+
+/* Destacados */
+
+.destacado {
+    transform: rotate(-1.5deg);
+    background: linear-gradient(135deg, #111, #333);
+    color: white;
+}
+
+.destacado .tag {
+    background: white;
+    color: #111;
+}
+
+/* Texto */
+
+.post h2 {
+    font-family: 'DM Serif Display', serif;
+    margin-bottom: 15px;
+}
+
+.post p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.tag {
+    display: inline-block;
+    background: #111;
+    color: white;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+/* Hover elegante */
+
+.post:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin-top: 80px;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry {
+        column-count: 1;
+    }
+}

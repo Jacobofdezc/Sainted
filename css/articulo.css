@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #FFFFFF;
+    color: #333;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* semitransparente */
+    z-index: 10;
+    /*  background: #0000000;*/
+
+}
+
+#logo {
+    margin-top: 5px;
+    width: 80%;
+}
+
+header nav a {
+    margin-left: 110px;
+    text-decoration: none;
+    color: #4b4a49;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #3A4D6F;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #4b4a49;
+    z-index: 20;
+}
+
+.articulo {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #aaaaaa71;
+    margin: 20px 0;
+}
+
+p {
+    line-height: 1.8;
+    color: #919191;
+
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        padding: 0px 20px;
+        background-color: white;
+        z-index: 30;
+        position: fixed;
+    }
+
+    #logo {
+        width: 120px;
+        z-index: 30;
+        position: relative;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 31;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.826);
+        margin-left: 190px;
+
+    }
+
+    .articulo{
+        margin-top: 100px;
+    }
+
+
+    /* --- MENÚ FULLSCREEN --- */
+    .nav-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 120px 0 0 10px;
+        gap: 35px;
+        visibility: hidden;
+        display: none;
+        /* 👈 agrega esto */
+
+    }
+
+    .nav-links.active {
+        display: flex;
+        /* 👈 esto hará que aparezca */
+        opacity: 1;
+        visibility: visible;
+        animation: fadeIn 0.3s ease;
+
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-links a {
+        font-size: 25px;
+        font-weight: 300;
+        text-decoration: none;
+        margin-left: 20px;
+
+    }
+
+    .nav-links a:hover {
+        transform: translateX(10px);
+        color: #444;
+    }
+}
